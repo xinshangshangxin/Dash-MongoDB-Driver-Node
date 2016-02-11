@@ -46,8 +46,7 @@
       "outputSourceFiles" : true
     },
     "applicationName": "Node.js MongoDB Driver API",
-    "disqus": true,
-    "googleAnalytics": "UA-29229787-1",
+    "disqus": false,
     "openGraph": {
       "title": "",
       "type": "website",
@@ -60,7 +59,8 @@
       "description": "",
       "keyword": ""
     },
-    "linenums": true
+    "linenums": true,
+    "isDash": true
   },
   "markdown": {
     "parser": "gfm",
@@ -68,6 +68,10 @@
     "tags": ["examples"]
   },
   "examples": {
-    "indent": 4
+    "indent": 2
+  },
+  "docset" : {
+    "name": "MongoDB-Driver-Node",
+    "enableJavascript": true
   }
 }

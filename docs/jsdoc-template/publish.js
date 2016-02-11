@@ -513,4 +513,21 @@ exports.publish = function(taffyData, opts, tutorials) {
         });
     }
     saveChildren(tutorials);
-};
+
+    // 重置 globals 获取方法
+    members.globals = data({
+        kind: ['member', 'function', 'constant', 'typedef']
+    }).get();
+
+    var jsdocDocSet = require('jsdoc-docset');
+    view.dashTOC = jsdocDocSet.viewHelpers.dashAnchor;
+    jsdocDocSet.createDocSet({
+        templateHelper: helper,
+        docletHelper: {
+            getCategory: function(category){
+              return members[category]
+            }
+        },
+        opts: opts
+      });
+ };
